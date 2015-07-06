@@ -7,7 +7,7 @@ if [ $# -ne 2 ]; then
   exit 1
 fi
 # Check if IP is valid
-$IPCALC -s -c "$VAGRANT_MAIN_VM"
+/usr/bin/ipcalc -s -c "$VAGRANT_MAIN_VM"
 if [ $? -ne 0 ]; then
   echo "Error: IP $VAGRANT_MAIN_VM is invalid."
   echo "Usage: $0 $1 <ip_address>"
