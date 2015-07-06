@@ -10,10 +10,10 @@ fi
 $IPCALC -s -c "$VAGRANT_MAIN_VM"
 if [ $? -ne 0 ]; then
   echo "Error: IP $VAGRANT_MAIN_VM is invalid."
-  echo "Usage: $0 <ip_address>"
+  echo "Usage: $0 $1 <ip_address>"
   exit 1
 fi
 
 # Switching vagrant main IP into manifests
-$SED -i -e "s@VAGRANT_MAIN_VM@$VAGRANT_MAIN_VM@g" /usr/share/puppet/modules/openiosds/samples/vagrant-ext/manifests/*.pp
+$SED -i -e "s@VAGRANT_MAIN_VM@$VAGRANT_MAIN_VM@g" /usr/share/puppet/modules/openiosds/profiles/vagrant-ext/manifests/*.pp
 
